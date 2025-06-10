@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# citation-generator
+"Générateur de citations aléatoires - Frontend React + Backend Django Une application web qui affiche des citations aléatoires en français. Fonctionnalités :  Bouton "Nouvelle citation" pour obtenir une citation aléatoire  Sauvegarde des citations dans une base de données  Interface simple et intuitive  Technos : React, Django, Axios"
+>>>>>>> d9b9f19c1c90bdcbb6f839ea26c3f5560a1d8539

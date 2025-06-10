@@ -1,0 +1,48 @@
+name: React CI/CD
+
+on:
+  push:
+    branches:
+      - dev
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: .
+
+      - name: Run tests
+        run: npm test --if-present
+        working-directory: .
+
+      - name: Build React App
+        run: npm run build
+        working-directory: .
+
+  deploy-staging:
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to STAGING
+        run: echo "🚧 Déploiement vers STAGING ici (par exemple sur Netlify ou Vercel test)"
+
+  deploy-production:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to PRODUCTION
+        run: echo "🚀 Déploiement vers PRODUCTION ici (site final public)"
